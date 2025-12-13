@@ -1,32 +1,18 @@
-.centered
-{
-    text-align: center;
+.centered { text-align: center; }
+.bluetext { color:#4d85ff; }
+.whitetext { color:#ffffff;}
+.blacktext { color:#110500; }
+.redtext { color:#e62062; }
+.redback { background-color: #e62062; }
+.whiteback { background-color: #ffffff; }
+.blueback { background-color: #4d85ff; }
+.fontmain {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
-.bluetext
-{
-    color:#4d85ff;
-}
-.whitetext
-{
-    color:#ffffff;
-}
-.blacktext
-{
-    color:#110500;
-}
-.redtext
-{
-    color:#e62062;
-}
-.redback
-{
-    background-color: #e62062;
-}
-.whiteback
-{
-    background-color: #ffffff;
-}
-.blueback
-{
-    background-color: #4d85ff;
+.fontbold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
 }

@@ -60,13 +60,13 @@
 }
 .label {
   margin-left: 10px;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 2px;
   color: #9fa5ea;
-  font-size: 25px;
+  font-size: 35px;
 }
 .large_title {
-  font-size:130px;
+  font-size:128px;
   top: 20px;
 }
 

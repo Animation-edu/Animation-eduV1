@@ -1,5 +1,5 @@
 .centered { text-align: center; }
-.bluetext { color:#2e38fe; }
+.bluetext { color:#474aff; }
 .whitetext { color:#ffffff;}
 .blacktext { color:#110500; }
 .redtext { color:#e62062; }
@@ -25,9 +25,7 @@
     #f5f6fe,
     #a2b1f8
   );
-  border: 4px solid #2e38fe;
-
-  box-shadow: 0 0 12px rgba(79, 102, 255, 0.4);
+  border: 4px solid #474aff;
 
   border-radius: 999px;
 
@@ -37,15 +35,28 @@
   position: relative;
   margin: auto;
   top: 60px;
+
+  /*interactivity*/
+  cursor: pointer;
+  box-shadow: 0 0 1px rgba(79, 102, 255, 0);
+  transition: box-shadow 0.25s ease, transform 0.25 ease;
 }
-.circle_icon {
+.select_bar:hover {
+  box-shadow: 
+    0 0 6px rgba(79, 102, 255, 0.7),
+    0 0 18px rgba(79, 102, 255, 0.4); 
+  transform: translateY(-1px)
+
+}
+
+  .circle_icon {
   width: 75px;
   height: 75px;
 
   background: linear-gradient(
     to bottom,
-    #373df3,
-    #5159f7
+    #464cef,
+    #646bfc
   );
   color: white;
 
@@ -74,7 +85,7 @@
   --h: 40%;
 
   aspect-ratio: 2/3;
-  height: 250px;
+  height: 58px;
   background: linear-gradient(
     to bottom,
     #c7cbfd,
@@ -82,4 +93,5 @@
   );
   clip-path: polygon(calc(50% - var(--t)/2) 0,calc(50% - var(--t)/2) calc(100% - var(--h)),0 calc(100% - var(--h)),50% 100%,100% calc(100% - var(--h)),calc(50% + var(--t)/2) calc(100% - var(--h)),calc(50% + var(--t)/2) 0);
   display: flex;
+  margin-right: 4px;
 }

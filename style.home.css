@@ -205,8 +205,8 @@ html, body {
 .title_bar {
     background: linear-gradient(
       180deg, 
-      hsla(0, 0%, 100%, 1) 90%, 
-      hsla(233, 82%, 98%, 1) 93%,
+      hsla(211, 20%, 93%, 1) 90%, 
+      hsla(218, 58%, 93%, 1) 93%,
       hsla(239, 58%, 50%, 1) 100%);
     border-bottom: 4px solid #474aff;
     box-shadow: 0 0 8px rgba(79, 88, 255, 0.4); 

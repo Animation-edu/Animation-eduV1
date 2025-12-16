@@ -83,7 +83,7 @@ window.addEventListener('mousemove', (event) => {
     mouse.y = (event.clientY / window.innerHeight) *2 - 1;
 });
 
-const ROTATION_STRENGTH = 0.15;
+const ROTATION_STRENGTH = 0.09;
 const SMOOTHING = 0.05;
 
 function animate() {

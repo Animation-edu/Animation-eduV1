@@ -1,3 +1,9 @@
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+
 .centered { text-align: center; }
 .bluetext { color:#474aff; }
 .whitetext { color:#ffffff;}
@@ -196,4 +202,77 @@
   margin-top: 11px;
 }
 
+.title_bar {
+    background: linear-gradient(
+      180deg, 
+      hsla(0, 0%, 100%, 1) 90%, 
+      hsla(233, 82%, 98%, 1) 93%,
+      hsla(239, 58%, 50%, 1) 100%);
+    border-bottom: 4px solid #474aff;
+    box-shadow: 0 0 8px rgba(79, 88, 255, 0.4); 
+    height: 40px;
+    width: 100%;
+}
 
+.menu_bounding_box {
+    position: relative;
+    width: 40px;
+    height: 27px;
+    top: 7px;
+    margin-left: 7px;
+    background-color: #00000000;
+    cursor: pointer;
+
+    transition: transform 0.25s ease, rotate 0.25s ease;
+}
+
+.menu_bounding_box:hover {
+    transform: scale(1.1);
+}
+
+.menu_bounding_box.active {
+  transform: scale(0.9);
+    rotate: 90deg;
+}
+
+.menu {
+    position: relative;
+    width: 36px;
+    height: 5px;
+    background-color: #474aff;
+    border-radius: 18px;
+    top: 1px;
+    margin-left: 1px;
+
+}
+
+.menu::before,
+.menu::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #474aff;
+    border-radius: 18px;
+}
+
+.menu::before {
+    top: 10px;
+}
+
+.menu::after {
+    top:20px;
+}
+
+.scene {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ui {
+  position: relative;
+  z-index: 10;
+}

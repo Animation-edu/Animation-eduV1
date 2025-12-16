@@ -20,9 +20,14 @@
                 <div class="down_arrow_icon"></div>
             </div>
             <span class="label fontmain">SELECT SUBJECT</span>
-        </div>
-        <div class="blacktext fontmain">
-            
+            <div class="chem_bar" id="goChem">
+                <span class="label_chem fontmain">CHEMISTRY</span>
+            </div>
+            <script>
+                document.getElementById("goChem").addEventListener('click', function() {
+                    window.location.href = 'chemistry.html';
+                })
+            </script>
         </div>
         <footer class="blacktext fontmain">
             

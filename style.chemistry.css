@@ -1,32 +1,31 @@
 .centered { text-align: center; }
-.bluetext { color:#474aff; }
-.whitetext { color:#ffffff;}
-.blacktext { color:#110500; }
-.redtext { color:#e62062; }
 .purpletext { color: #7045f5; }
-.redback { background-color: #e62062; }
-.whiteback { background-color: #ffffff; }
-.blueback { background-color: #4d85ff; }
-.fontmain {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
 .fontbold {
   font-family: "Poppins", sans-serif;
   font-weight: 900;
   font-style: normal;
 }
+
+.large_title {
+  font-size:162px;
+  top: 20px;
+}
+.fontmain {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .select_bar {
   width: 950px;
   height: 75px;
 
   background: linear-gradient(
     to right,
-    #f5f6fe,
-    #a2b1f8
+    #f9f5fd,
+    #c9b2f4
   );
-  border: 4px solid #474aff;
+  border: 4px solid #7045f5;
   box-shadow: 0 0 1px rgba(79, 102, 255, 0);
 
   border-radius: 60px;
@@ -45,8 +44,8 @@
 }
 .select_bar:hover {
   box-shadow: 
-    0 0 6px rgba(79, 102, 255, 0.7),
-    0 0 18px rgba(79, 102, 255, 0.4); 
+    0 0 6px rgba(126, 79, 255, 0.7),
+    0 0 18px rgba(135, 79, 255, 0.4); 
   transform: translateY(-1px);
   height: 375px;
 
@@ -58,8 +57,8 @@
 
   background: linear-gradient(
     to bottom,
-    #464cef,
-    #646bfc
+    #7646ef,
+    #9c64fc
   );
   color: white;
 
@@ -92,20 +91,16 @@
   margin-left: 90px;
   font-weight: 700;
   letter-spacing: 2px;
-  color: #9fa5ea;
+  color: #987bef;
   font-size: 35px;
 
   transition: color 0.25s ease;
 }
 
 .select_bar:hover .label {
-  color: #474aff;
+  color: #7045f5;
 }
 
-.large_title {
-  font-size:128px;
-  top: 20px;
-}
 .down_arrow_icon {
   --t: 45%;
   --h: 40%;
@@ -114,7 +109,7 @@
   height: 58px;
   background: linear-gradient(
     to bottom,
-    #c7cbfd,
+    #dec7fd,
     #ffffff
   );
   clip-path: polygon(calc(50% - var(--t)/2) 0,calc(50% - var(--t)/2) calc(100% - var(--h)),0 calc(100% - var(--h)),50% 100%,100% calc(100% - var(--h)),calc(50% + var(--t)/2) calc(100% - var(--h)),calc(50% + var(--t)/2) 0);
@@ -132,68 +127,7 @@
 .select_bar:hover .down_arrow_icon {
   transform: scale(1.00);
   rotate: 0deg;
-  box-shadow: 0 0 6px rgba(79, 102, 255, 0.7);
+  box-shadow: 0 0 6px rgba(155, 79, 255, 0.7);
   margin-top: 11px;
 
 }
-
-.chem_bar {
-  width: 861px;
-  height: 0px;
-
-  background: linear-gradient(
-    to right,
-    #f9f5fd,
-    #c9b2f4
-  );
-  border: 0px solid #7145f500;
-  box-shadow: 0 0 1px rgba(79, 102, 255, 0);
-
-  border-radius: 60px;
-
-  display: flex;
-  align-items: center;
-
-  position: absolute;
-  margin-left: 80px;
-  top: 0;
-  margin-top: 75px;
-
-  cursor: pointer; 
-
-  transition: height 0.1s ease, border 0.01s ease, box-shadow 0.05s ease, transform 0.05s ease;
-  transition-delay: 0s;
-}
-
-.chem_bar:hover {
-  box-shadow: 
-    0 0 6px rgba(126, 79, 255, 0.7),
-    0 0 18px rgba(135, 79, 255, 0.4); 
-  transform: translateY(-1px);
-}
-
-.select_bar:hover .chem_bar {
-  height: 73px;
-  border: 4px solid #7045f5;
-}
-
-.label_chem {
-  position: absolute;
-  top: 0;
-  margin-top: 0px;
-  margin-left: 31px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #7145f500;
-  font-size: 35px;
-  
-  transition: color 1.5s ease, margin-top 0.1 ease;
-  transition-delay: 0.05s
-}
-
-.select_bar:hover .chem_bar .label_chem {
-  color: #7045f5;
-  margin-top: 11px;
-}
-
-

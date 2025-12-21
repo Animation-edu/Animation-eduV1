@@ -62,19 +62,23 @@ const ambientLight = new THREE.AmbientLight(0x808080, 1);
 scene.add(ambientLight);
 
 const dirLight1 = new THREE.DirectionalLight(0xffffff, 3);
-dirLight1.position.set(0,1,0);
+dirLight1.position.set(0,1.5,0);
 scene.add(dirLight1);
 
-const dirLight2 = new THREE.DirectionalLight(0xffffff, 3);
-dirLight2.position.set(-1,0.4,-0.5);
+const dirLight2 = new THREE.DirectionalLight(0xffffff, 2.1);
+dirLight2.position.set(-3.2,0.4,-0.5);
 scene.add(dirLight2);
 
+const dirLight5 = new THREE.DirectionalLight(0xffffff, 0.9);
+dirLight5.position.set(3.2,0.4,-0.5);
+scene.add(dirLight5);
+
 const dirLight3 = new THREE.DirectionalLight(0xffffff, 1);
-dirLight3.position.set(0.2,-1,0.05);
+dirLight3.position.set(0.2,-1.7,0.05);
 scene.add(dirLight3);
 
 const dirLight4 = new THREE.DirectionalLight(0xffffff, 1.5);
-dirLight4.position.set(0,0.1,1);
+dirLight4.position.set(0,0.1,2.4);
 scene.add(dirLight4);
 
 const mouse = { x:0, y:0 };
@@ -103,12 +107,5 @@ function animate() {
 }
 
 animate();
-
-
-window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-})
 
 renderer.domElement.style.pointerEvents = 'none';

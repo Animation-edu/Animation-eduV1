@@ -1,46 +1,5 @@
-.text_bounding_box {
-  position: absolute;
-  top: 0;
-  height: 0px;
-  width: 538px;
-  margin-left: 1px;
-  margin-top: 75px;
-  background: #ff000000;
-  transform: scale(0);
-  transition: 
-    transform 0.25s ease, 
-    height 0.35s ease;
-  transform-origin: left;
-}
-
-.purple_checkbox {
-  width: 45px;
-  height: 45px;
-  background-color: #474aff00;
-  border: 0px solid #7145f500;
-  position: absolute;
-  top:0;
-  margin-top: 1px;
-  margin-left: 14px;
-  border-radius: 12px;
-  transition: 
-    transform 0.2s ease, 
-    background-color 0.25s ease-in, 
-    height 0.35s ease;
-}
-.dropdown_item_purple {
-  text-align: left;
-  margin-left: 80px;
-  margin-top: -14px;
-  font-size: 0px;
-  transition: 
-    font-size 0.25s ease, 
-    height 0.25s ease,
-    transform 0.25s ease;
-  transform-origin: left;
-}
-
-/*Debug ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* MAIN PAGE -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*Debug ---------------------------------*/
 html, body {
   margin: 0;
   height: 100%;
@@ -50,12 +9,19 @@ html, body {
   inset: 0;
   z-index: 0;
   pointer-events: none;
+  height: 100%;
+  width: 100%;
+  display: block;
 }
 .ui {
   position: relative;
   z-index: 10;
 }
-/*General ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+ul {
+  list-style-type: none;
+}
+/*General --------------------------------------*/
 .centered { text-align: center; }
 .bluetext { color:#474aff; }
 .whitetext { color:#ffffff;}
@@ -76,10 +42,10 @@ html, body {
   font-weight: 900;
   font-style: normal;
 }
-/*Top Down ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*Top Down -------------------------------------------------*/
 /*Top Bar*/
 .top_bar {
-    background: hsla(211, 20%, 93%, 1) 93%;
+    background: #EAEDF1;
     border-bottom: 4px solid #474aff;
     box-shadow: 0 0 8px rgba(79, 88, 255, 0.4); 
     height: clamp(2.3rem, 5rem, 7rem);
@@ -123,6 +89,17 @@ html, body {
 .menu::after {
     top:46px;
 }
+.menu_bounding_box.active {
+    transform: scale(0.85);
+    rotate: 90deg;
+}
+.menu_bounding_box.active:hover {
+    transform: scale(0.92);
+    rotate: 90deg;
+}
+.menu_bounding_box:hover {
+    transform: scale(1.1);
+}
 /*Dropdown menu*/
 .dropdown {
   position: absolute;
@@ -137,6 +114,7 @@ html, body {
   height: 0px;
   width: 30rem;
   margin-top: 94px;
+  margin-left: 0px;
   top: 0;
   border-bottom-right-radius: 25px;
   transition: 
@@ -145,66 +123,35 @@ html, body {
     border-right 0.25s ease, 
     border-bottom 0.25s ease;
 }
-/*Blue item*/
-.dropdown_item_blue {
-  text-align: left;
-  margin-left: 80px;
-  margin-top: 0px;
-  font-size: 0px;
-  transition: 
-    font-size 0.25s ease, 
-    height 0.25s ease;
+.dropdown.active {
+  height: 50rem;
+  box-shadow: 0 0 6px rgba(79, 102, 255, 0.7);
+  border-right: 4px solid #474aff;
+  border-bottom: 4px solid #474aff;
 }
-.blue_checkbox {
-  width: 45px;
-  height: 0px;
-  background: #474aff;
-  border: 0px solid #474aff00;
-  position: absolute;
-  top:0;
-  margin-top: 15px;
-  margin-left: 15px;
-  border-radius: 12px;
-  transform: 
-    scale(1.1), 
-    height 0.25s ease, 
-    border 0.25s ease;
+.star {
+  height: 5rem;
+  width: 4.5rem;
+  margin-top: -100px;
+  margin-left: 4010px;
+  background: #00ff0400;
+  color: #B7BBBF;
+  font-size: 4.5rem;
+  transform: scale(1);
+  transform-origin: center;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
-/* Learned from geeksforgeeks.org - borders act as lines of check mark because there is no background*/
-.blue_tick_icon {
-  height: 0px;
-  width: 0px;
-  margin-left: 10px;
-  margin-top: 0.5px;
-  border-bottom: 0px solid #ffffff00;
-  border-right: 0px solid #ffffff00;
-  transform: rotate(45deg) translateY(-2px);
-  top: 0;
-  position: absolute;
-  transition: 
-    height 0.35s ease,
-    width 0.35s ease,
-    border-bottom 0.35s ease,
-    border-right 0.35s ease;
+.star:hover {
+  transform: scale(1.1);
 }
-.purple_tick_icon {
-  height: 30px;
-  width: 12px;
-  margin-left: 10px;
-  margin-top: 0px;
-  border-bottom: 10px solid #ffffff00;
-  border-right: 10px solid #ffffff00;
-  transform: rotate(45deg) translateY(-2px);
-  top: 0;
-  position: absolute;
-  transition: 
-    border 0.05s ease-in, 
-    height 0.35s ease;
-/*Purple item*/
+.star.active {
+  color: #ffcc00;
+  transform: scale(1.1);
+}
+.star:hover.active {
+  transform: scale(1.15);
+}
 
-
-/* See tick Item above: */
-}
 /*Main title*/
 .large_title {
   font-size:17rem;
@@ -231,7 +178,7 @@ html, body {
   cursor: pointer;
   transform-origin: top;
   transition: 
-    box-shadow 0.25s ease, 
+    box-shadow 0.15s ease, 
     transform 0.25s ease, 
     height 0.25s ease;
 }
@@ -343,28 +290,17 @@ html, body {
     transform 0.25s ease,
     margin-top 0.25s ease;
 }
-/*Interactivity - Hover ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*Interactivity - Hover -------------------------------------------------*/
 /*Dropdown Menu*/
-.menu_bounding_box:hover {
-    transform: scale(1.1);
-}
-/*Dropdown*/
-.text_bounding_box:hover {
-  transform: scale(1.1);
-}
-.text_bounding_box:hover .dropdown_item_purple {
-  transform: scale(1.1);
-}
-.text_bounding_box:hover .purple_checkbox {
-  background-color: #7145f5;
-  transform: scale(1.1);
-}
-.text_bounding_box:hover .purple_tick_icon {
-  border-bottom: 10px solid #ffffff;
-  border-right: 10px solid #ffffff;
-}
+
 /*Select bar*/
 .select_bar:hover {
+  box-shadow: 
+    0 0 6px rgba(79, 102, 255, 0.7),
+    0 0 18px rgba(79, 102, 255, 0.4); 
+  transform: translateY(-1px);
+}
+.select_bar.active {
   box-shadow: 
     0 0 6px rgba(79, 102, 255, 0.7),
     0 0 18px rgba(79, 102, 255, 0.4); 
@@ -375,70 +311,41 @@ html, body {
   color: #474aff;
 }
 .select_bar:hover .circle_icon {
+  transform: scale(1.01);
+  box-shadow: 
+    0 0 8px rgba(79, 102, 255, 0.3);
+}
+.label.active {
+  color: #474aff;
+}
+.circle_icon.active {
   transform: scale(1.05);
   box-shadow: 
     0 0 8px rgba(79, 102, 255, 0.3);
   height: 600px; 
 }
-.select_bar:hover .down_arrow_icon {
+.down_arrow_icon.active {
   transform: scale(1.00);
   rotate: 0deg;
   box-shadow: 0 0 6px rgba(79, 102, 255, 0.7);
   margin-top: 15px;
 }
-.select_bar:hover .chem_bar {
+.chem_bar.active {
   height: 120px;
   border: 4px solid #7045f5;
 }
-.select_bar:hover .label_chem {
+.label_chem.active {
   color: #987bee;
   margin-top: 0px;
 }
-.chem_bar:hover {
+.chem_bar.active:hover {
   box-shadow: 
     0 0 6px rgba(126, 79, 255, 0.7),
     0 0 18px rgba(135, 79, 255, 0.4); 
   transform: translateY(-1px);
 }
-.chem_bar:hover .label_chem{
+.chem_bar.active:hover .label_chem.active{
   color: #7045f5;
   margin-top: 0px;
   transform: scale(1.05);
-}
-/*Interactivity - Active Toggle ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-.menu_bounding_box.active {
-  transform: scale(0.9);
-    rotate: 90deg;
-}
-.dropdown.active {
-  height: 50rem;
-  box-shadow: 0 0 6px rgba(79, 102, 255, 0.7);
-  border-right: 4px solid #474aff;
-  border-bottom: 4px solid #474aff;
-}
-.dropdown_item_blue.active {
-  font-size: 3.5rem;
-  height: 100%
-}
-.dropdown_item_purple.active {
-  font-size: 3.5rem;
-  height: 100%
-}
-.blue_checkbox.active {
-  height: 45px;
-  border: 4px solid #474aff;
-}
-.purple_checkbox.active {
-  height: 45px;
-  border: 4px solid #7045f5;
-}
-.text_bounding_box.active {
-  height: 55px;
-  transform: scale(1);
-}
-.blue_tick_icon.active {
-  height: 30px;
-  width: 12px;
-  border-bottom: 10px solid #ffffff;
-  border-right: 10px solid #ffffff;
 }

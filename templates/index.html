@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block style %}
+    <link href="/static/style.main.css" rel="stylesheet">
+    <link href="/static/index/style.menus.css" rel="stylesheet">
+{% endblock %}
+
+{% block favicon %}
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/static/favicon_io/site.webmanifest">
+{% endblock %}
+{% block title %}
+    Homepage:
+{% endblock %}
+
+        {% block dropdown %}  
+        <div class="dropdown ui drop">
+            <ul class="dropdown_list">
+                <li>
+                    <div class="blue_text_bounding_box drop" id="home_box">
+                        <div class="dropdown_item_blue fontmain bluetext drop">HOME</div>
+                        <div class="blue_checkbox drop">
+                            <div class="blue_tick_icon drop"></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="purple_text_bounding_box drop" id="chemistry_box">
+                        <div class="dropdown_item_purple fontmain purpletext drop">CHEMISTRY</div>
+                        <div class="purple_checkbox drop">
+                            <div class="purple_tick_icon drop"></div>
+                        </div>
+                    </div>
+                </li>
+                <script>
+                    document.getElementById("chemistry_box").addEventListener('click', function() {
+                        window.location.href = "/chemistry";
+                    })
+                </script>
+            </ul>
+        </div>
+            <div class="star" id="star">★</div>
+            <script>
+                document.getElementById("star").addEventListener('click', function() {
+                        document.getElementById("star").classList.toggle('active');;
+                    })
+            </script>
+        {% endblock %}
+
+    {% block main %}
+        <div class="bluetext fontbold large_title">
+            LEARNING.VFX
+        </div>
+
+        <canvas id="scene" class="scene"></canvas>
+        <script type="module" src="static/index.main.js"></script>
+
+        <div class="ui">
+            <div class="select_bar" id="select_bar">
+                <div class="circle_icon select_item">
+                    <div class="down_arrow_icon select_item"></div>
+                </div>
+                <span class="label fontmain select_item">SELECT SUBJECT</span>
+                <div class="chem_bar select_item" id="chemistry_bar">
+                    <span class="label_chem fontmain select_item">CHEMISTRY</span>
+                </div>
+                <script>
+                    document.getElementById("chemistry_bar").addEventListener('click', function() {
+                        //From stack overflow
+                        if (document.getElementById("chemistry_bar").classList.contains('active')) {
+                            window.location.href = "/chemistry";
+                        }
+                    })
+                </script>
+            </div>
+            <script>
+                document.getElementById("select_bar").addEventListener('click', function() {
+                    document.getElementById("select_bar").classList.toggle('active');
+                    var select_options = document.getElementsByClassName("select_item")
+                    for(var i = 0; i < select_options.length; i++)
+                    {
+                        select_options[i].classList.toggle('active');
+                    }
+                })
+            </script>
+        </div>
+    {% endblock %}
